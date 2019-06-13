@@ -1,31 +1,35 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Login</router-link> |
+      <router-link to="/home">Home</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+import { CometChat } from "@cometchat-pro/chat";
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+import "./App.css";
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  created() {
+    this.initializeApp();
+  },
+  methods: {
+    initializeApp() {
+      var appID = process.env.VUE_APP_COMMETCHAT_APP_ID;
+
+      CometChat.init(appID).then(
+        () => {
+          console.log("Initialization completed successfully");
+        },
+        error => {
+          console.log("Initialization failed with error:", error);
+        }
+      );
+    }
+  }
+};
+</script>
