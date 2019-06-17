@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Login</router-link> |
-      <router-link to="/home">Home</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -20,7 +16,6 @@ export default {
   methods: {
     initializeApp() {
       var appID = process.env.VUE_APP_COMMETCHAT_APP_ID;
-
       CometChat.init(appID).then(
         () => {
           console.log("Initialization completed successfully");

@@ -1,24 +1,32 @@
 <template>
-    <div id="auth">
-        <div id="nav">
-          <router-link to="/login">Login</router-link> 
+  <div id="auth">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-6">
+                        <form v-on:submit.prevent="authLoginUser">
+                            <h3>Welcome Back</h3>
+                            <div class="form-wrapper">
+                                <label>Username</label>
+                                <input type="text" name="username" id="username" v-model="username" placeholder="Enter your username" class="form-control">
+                                <i class="fa fa-envelope text"></i>
+                            </div>
+                            <button type="submit">LOG IN &nbsp;&nbsp;<span v-if="showSpinner" class="fa fa-spin fa-spinner"></span> </button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-6">
+                        <div class="image-holder">
+                            <img src="../assets/illustration.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+           </div>
         </div>
-    
-        <p> Enter your username to start video chat </p>
-        <p>Create an account through your CometChat dashboard or login with one of our test users (superhero1, superhero2)</p>
-
-        <form v-on:submit.prevent="authLoginUser">
-            <div class="form-group">
-                <input name="username" id="username" class="form-control" placeholder="Enter your username" v-model="username"/>
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-success"> Login <span v-if="showSpinner" class="fa fa-spin fa-spinner"></span></button>
-            </div>
-        </form>
     </div>
+  </div>
 </template>
-
 
 <script>
 import { CometChat } from "@cometchat-pro/chat";
@@ -37,7 +45,9 @@ export default {
       CometChat.login(this.username, apiKey).then(
         () => {
           this.showSpinner = false;
-          this.$router.push({ name: "home" });
+          this.$router.push({
+            name: "home"
+          });
         },
         error => {
           this.showSpinner = false;
