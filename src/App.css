@@ -158,7 +158,6 @@ label {
   height: 100%;
 }
 .container {
-  max-width: 780px !important;
   margin: auto;
   margin-top: 4%;
   font-family: sans-serif;
