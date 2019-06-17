@@ -4,7 +4,7 @@ Read the full tutorial here:
 
 >> Not yet published
 
-This application detailed the step by step guide on how to build a modern group chat application with using Vue.js and CometChat.
+This application detailed the step by step guide on how to build a modern group chat application using Vue.js and CometChat.
 
 Take a look at the screenshot below:
 
@@ -41,7 +41,7 @@ Replace `YOUR_API_KEY`, `YOUR_APP_ID` and `YOUR_GROUP_GUID` with your API KEY, A
 
 <img src="screenshots/screenshot_2.png">
 
-10. Open the application in two separate windows and log in with any two of the test users: superhero1, superhero2, superhero3, superhero4 or superhero5
+10. Open the application in two separate windows and log in with any two of the test users: superhero1, superhero2, or superhero3
 
 <img src="screenshots/screenshot_3.png">
 

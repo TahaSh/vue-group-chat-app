@@ -21,7 +21,7 @@
                 <div class="chats" id="chats">
                     <div class="msg-page" id="msg-page">
 
-                      <div class="text-center img-fluid" v-if="groupMessages.length" id="empty-chat">
+                      <div class="text-center img-fluid" v-if="!groupMessages.length" id="empty-chat">
                         <div class="empty-chat-holder">
                            <img src="../assets/illustration-empty-chat.svg" class="img-res" alt="empty chat image">
                         </div>
