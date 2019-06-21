@@ -134,6 +134,7 @@ label {
 .empty-chat-holder {
   width: 100%;
   height: 250px;
+  margin-top: 70px;
 }
 
 #empty-chat {
