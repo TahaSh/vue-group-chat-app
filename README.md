@@ -14,20 +14,20 @@ Take a look at the screenshot below:
 ## Technology
 
 This demo uses:
-* CometChat Pro 1.7.0
+* [CometChat](https://cometchat.com/)
 * [Vuejs](https://vuejs.org/)
 
 
 ## Running the demo
 To run the demo follow these steps:
 
-1. Head to CometChat Pro and create an account
+1. Head to the [CometChat dashboard](https://app.cometchat.com/) (you'll need to create a free account if you haven't already)
 2. From the dashboard, create a new app called "vue-group-chat"
-3. Once created, click **Explore**
-4. Go to the API Keys tab and copy the automatically-generated Full access API Key and the application ID as well
-5. Go to the Groups tab and copy the GUID of the group automatically created by CometChat
-6. Download the repository [here](https://github.com/yemiwebby/vue-group-chat-app/archive/master.zip) or by running `https://github.com/yemiwebby/vue-group-chat-app.git`
-7. Run this command `npm install` to install all the project's dependencies.
+3. Once created, click the button **Explore**
+4. Click **API Keys** on the left-hand-side and note the automatically-generated Full access API Key and the application ID as well
+5. Go to the **Groups** tab and note the GUID of the group automatically created by CometChat
+6. Download the repository [here](https://github.com/yemiwebby/vue-group-chat-app/archive/master.zip) or by running `git clone https://github.com/yemiwebby/vue-group-chat-app.git`
+7. Run `npm install` to install all the project's dependencies
 8. Create a `.env` file with the root folder of the project and paste the following content in it:
 
 ```
