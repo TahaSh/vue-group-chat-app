@@ -6,7 +6,7 @@
         <div class="container">
           <div class="msg-header">
               <div class="active">
-                  <h4># General</h4>
+                  <h5># General</h5>
               </div>
 
               <div class="header-icons">
