@@ -100,8 +100,6 @@ export default {
     };
   },
   mounted() {
-    let globalContext = this;
-
     var listenerID = "UNIQUE_LISTENER_ID";
     CometChat.addMessageListener(
       listenerID,
@@ -109,11 +107,13 @@ export default {
         onTextMessageReceived: textMessage => {
           console.log("Text message received successfully", textMessage);
           // Handle text message
-          globalContext.groupMessages = [
-            ...globalContext.groupMessages,
+          this.groupMessages = [
+            ...this.groupMessages,
             textMessage
           ];
-          globalContext.scrollToBottom();
+          this.$nextTick(() => {
+            this.scrollToBottom();
+          })
         }
       })
     );
@@ -140,7 +140,7 @@ export default {
 
     scrollToBottom() {
       const chat = document.getElementById("msg-page");
-      chat.scrollTop = chat.scrollHeight + 30 + "px";
+      chat.scrollTo(0, chat.scrollHeight + 30);
     },
 
     sendGroupMessage() {
@@ -165,6 +165,9 @@ export default {
           this.sendingMessage = false;
           // Text Message Sent Successfully
           this.groupMessages = [...globalContext.groupMessages, message];
+          this.$nextTick(() => {
+            this.scrollToBottom()
+          })
         },
         error => {
           console.log("Message sending failed with error:", error);
