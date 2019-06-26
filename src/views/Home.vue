@@ -15,15 +15,24 @@
                   <div class="chats" id="chats">
                       <div class="msg-page" id="msg-page">
 
-                        <div class="text-center img-fluid" v-if="!groupMessages.length" id="empty-chat">
+                        <div
+                          v-if="loadingMessages"
+                          class="loading-messages-container"
+                        >
+                          <spinner :size="100"/>
+                          <span class="loading-text">
+                            Loading Messages
+                          </span>
+                        </div>
+                        <div class="text-center img-fluid" v-else-if="!groupMessages.length" id="empty-chat">
                           <div class="empty-chat-holder">
                             <img src="../assets/illustration-empty-chat.svg" class="img-res" alt="empty chat image">
                           </div>
 
                           <div>
                             <h2> No new message? </h2>
-                            <h6>
-                              <center>Send your first message below.</center>
+                            <h6 class="empty-chat-sub-title">
+                              Send your first message below.
                             </h6>
                           </div>
                         </div>
@@ -96,10 +105,12 @@ export default {
       sendingMessage: false,
       chatMessage: "",
       loggingOut: false,
-      groupMessages: []
+      groupMessages: [],
+      loadingMessages: false
     };
   },
   mounted() {
+    this.loadingMessages = true
     var listenerID = "UNIQUE_LISTENER_ID";
     CometChat.addMessageListener(
       listenerID,
@@ -111,6 +122,7 @@ export default {
             ...this.groupMessages,
             textMessage
           ];
+          this.loadingMessages = false
           this.$nextTick(() => {
             this.scrollToBottom();
           })

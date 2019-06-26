@@ -157,8 +157,9 @@ label {
 #empty-chat h2 {
   color: #1546dc;
   font-family: 'Abril Fatface';
-  padding: 25px;
+  padding: 0;
   font-size: 2rem;
+  margin: 25px auto 15px;
 }
 
 .empty-chat-holder img {
@@ -479,6 +480,31 @@ nav .spinner {
 
 .message-input {
   padding: 6px 20px;
+}
+
+.empty-chat-sub-title {
+  text-align: center;
+  color: #555;
+  font-size: 18px;
+}
+
+.loading-messages-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.loading-text {
+  font-family: 'Abril Fatface';
+  color: #1546dc;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.loading-messages-container .spinner svg {
+  stroke: #CCD7F0;
 }
 
 @media (max-width: 760px) {
